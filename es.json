@@ -1,0 +1,47 @@
+{
+  "levels_support": [
+    4000,
+    3950
+  ],
+  "ranges_support": [
+    [
+      3970,
+      3975
+    ],
+    [
+      3985,
+      3990
+    ]
+  ],
+  "levels_resistance": [
+    4100,
+    4150
+  ],
+  "ranges_resistance": [
+    [
+      4115,
+      4120
+    ],
+    [
+      4130,
+      4135
+    ]
+  ],
+  "labels_levels_support": [
+    "(note here) 4000",
+    "(note here) 3950"
+  ],
+  "labels_ranges_support": [
+    "(note here) 3970-75",
+    "(note here) 3985-90"
+  ],
+  "labels_levels_resistance": [
+    "(note here) 4100",
+    "(note here) 4150"
+  ],
+  "labels_ranges_resistance": [
+    "(note here) 4115-20",
+    "(note here) 4130-35"
+  ],
+  "timestamp": "2023-02-23T13:36:13-08:00"
+}
