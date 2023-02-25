@@ -5,6 +5,7 @@ Script written and tested for py3.10
 Additional modules you will likely need to install:
 pyyaml
 selenium
+undetected_chromedriver
 
 Download chromedriver.exe file, and have chrome browser updated to latest
 https://chromedriver.chromium.org/downloads
