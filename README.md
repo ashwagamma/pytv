@@ -26,9 +26,9 @@ You will need to add 'support'/'resistance' templates to tradingview horizontal 
 
 Update login_details.py with substack login credentials, or modify the levels_parser_mancini.py module to take input for password at prompt if you don't want to store credentials in local file.
 
-The format for support and resistance text is. I am not very good at regex, so no commas supported inside the labels, semicolons are ok i.e. can say (major; knife catch) but not (major, knife catch)
+The format for support and resistance text is.\n
 Supports are: 3950, 4000, 3910-3915 (major), 3920-3925 (major).
 Resistances are: 4100, 4150, 4115-4120 (major), 4130-4135 (major).
-
+I am not very good at regex, so no commas supported inside the labels, semicolons are ok i.e. can say (major; knife catch) but not (major, knife catch)
 
 The source are completely open, make them yours, no licenses attached.
