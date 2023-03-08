@@ -8,6 +8,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 import login_details
 from time import sleep
+import undetected_chromedriver as uc
 
 
 class TradingviewHelper(object):
@@ -19,18 +20,13 @@ class TradingviewHelper(object):
 
     @staticmethod
     def login(download_dir):
-        options = Options()
+        options = uc.ChromeOptions()
         options.add_argument("start-maximized")
-        if download_dir:
-            prefs = {'download.default_directory': download_dir,
-                     'profile.default_content_setting_values.automatic_downloads': 1}
-        else:
-            prefs = {'profile.default_content_setting_values.automatic_downloads': 1}
-        options.add_experimental_option('prefs', prefs)
-
-        chromedriver = 'chromedriver.exe'
-        browser = webdriver.Chrome(chromedriver, options=options)
-        browser.get('https://tradingview.com/#signin')
+        prefs = {"credentials_enable_service": False,
+                 "profile.password_manager_enabled": False}
+        options.add_experimental_option("prefs", prefs)
+        browser = uc.Chrome(use_subprocess=True, options=options)
+        browser.maximize_window()
 
         #with open('readme.txt', 'w', encoding="utf-8") as f:
         #    f.write(browser.page_source)
