@@ -83,7 +83,7 @@ browser.maximize_window()
 
 wait = WebDriverWait(browser, 10)
 
-elem_x = wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div/div[1]/div[2]/div[2]/div/div/div/button"))).click()
+elem_x = wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div[1]/div[2]/div[6]/div/div/div/button"))).click()
 # Sign In button top corner
 browser.find_element("xpath", ".//*[contains(text(), 'Sign in')]").click()
 # Sign in with password link
@@ -96,7 +96,7 @@ wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div/div/div[2]/div[
 wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div/div/div[2]/div[2]/form/div[3]/button"))).click()
 
 # first post
-wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div/div[1]/div[2]/div[2]/div[2]/a[1]"))).click()
+wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]"))).click()
 
 # wait till page has loaded
 wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div[1]/div[2]/div/div[1]/div/article/div[4]/div[1]")))
