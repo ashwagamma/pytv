@@ -52,16 +52,18 @@ def get_levels_ranges_labels(txt_in):
             else:
                 labels_ranges.append(range_temp[0])
         else:  # just a level
-            level = re.findall(r'\d+', elem)
-            for idx in range(len(level)):
-                levels.append(int(level[idx]))
-                label = re.findall("\((.*?)\)", elem)
-                if len(label) == 0:
-                    labels_levels.append(str(level[idx]))
-                elif len(label) > idx:
-                    labels_levels.append("(" + label[idx] + ") " + str(level[idx]))
-                else:
-                    labels_levels.append("(" + label[0] + ") " + str(level[idx]))
+            if '(' in elem and ')' in elem:
+                sparr = elem.split('(')
+                level = int(sparr[0])
+            else:
+                level = int(elem)
+
+            levels.append(level)
+            label = re.findall("\((.*?)\)", elem)
+            if len(label) == 0:
+                labels_levels.append(str(level))
+            else:
+                labels_levels.append("(" + label[0] + ") " + str(level))
 
     #print('txt_in=',txt_in)
     print('here:', levels, labels_levels, ranges, labels_ranges)
