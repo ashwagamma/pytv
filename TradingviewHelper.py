@@ -104,19 +104,19 @@ class TradingviewHelper(object):
 
         #sleep(1)
         # Styles
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-name='tab-item-style']"))).click()
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-id='source-properties-editor-tabs-style']"))).click()
         # Select template
         elem_footer = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "footer-PQhX1JKt")))
         elem_footer.find_element(By.XPATH, './/span').click()
         wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='"+template+"']"))).click()
 
         # Coordinates
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-name='tab-item-coordinates']"))).click()
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-id='source-properties-editor-tabs-coordinates']"))).click()
         #sleep(1)
         self.action_chains.send_keys(level).send_keys(Keys.TAB).perform()
 
         # Text
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-name='tab-item-text']"))).click()
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-id='source-properties-editor-tabs-text']"))).click()
         #sleep(1)
         self.action_chains.key_down(Keys.CONTROL).send_keys('A').key_up(Keys.CONTROL).perform()
         self.action_chains.send_keys(str(label)).perform()
@@ -154,13 +154,14 @@ class TradingviewHelper(object):
         self.action_chains.move_to_element(elem_settings).click().perform()
 
         # Select template
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-id='source-properties-editor-tabs-style']"))).click()
         elem_footer = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "footer-PQhX1JKt")))
         elem_footer.find_element(By.XPATH, './/span').click()
         wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='"+template+"']"))).click()
 
         #sleep(2)
         # Coordinates
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-name='tab-item-coordinates']"))).click()
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-id='source-properties-editor-tabs-coordinates']"))).click()
         #sleep(2)
         self.action_chains.send_keys(level_low).send_keys(Keys.TAB).send_keys(Keys.TAB).send_keys(level_high)
         self.action_chains.perform()
