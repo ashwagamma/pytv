@@ -61,7 +61,7 @@ class TradingviewHelper(object):
         x = 2
         while x < 100:
             try:
-                elem_tree = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "tree-zol_jClG")))
+                elem_tree = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "tree-MgF6KBas")))
                 elem_tree.find_element(By.XPATH, './/div[2]/div/div[' + str(x) + ']')  # This line is used to bail the try-except with an exception if no more drawings are present
                 try:
                     elem_title = elem_tree.find_element(By.XPATH, './/div[2]/div/div[' + str(x) + ']/div/span/span[2]')
@@ -106,7 +106,7 @@ class TradingviewHelper(object):
         # Styles
         wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-id='source-properties-editor-tabs-style']"))).click()
         # Select template
-        elem_footer = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "footer-PQhX1JKt")))
+        elem_footer = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "footer-PhMf7PhQ")))
         elem_footer.find_element(By.XPATH, './/span').click()
         wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='"+template+"']"))).click()
 
@@ -155,7 +155,7 @@ class TradingviewHelper(object):
 
         # Select template
         wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-id='source-properties-editor-tabs-style']"))).click()
-        elem_footer = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "footer-PQhX1JKt")))
+        elem_footer = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "footer-PhMf7PhQ")))
         elem_footer.find_element(By.XPATH, './/span').click()
         wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='"+template+"']"))).click()
 
