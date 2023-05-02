@@ -98,7 +98,7 @@ wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div/div/div[2]/div[
 wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div/div/div[2]/div[2]/form/div[3]/button"))).click()
 
 # first post
-wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]"))).click()
+wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div[1]/div[2]/div[1]/div[1]/div/div/div/div/div[2]/div[1]/a"))).click()
 
 # wait till page has loaded
 wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div[1]/div[2]/div/div[1]/div/article/div[4]/div[1]")))
