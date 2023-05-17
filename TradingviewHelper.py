@@ -34,9 +34,9 @@ class TradingviewHelper(object):
         browser.get("https://www.tradingview.com/#signin")
         wait = WebDriverWait(browser, 10)
         wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Email']"))).click()
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[name='username']"))).send_keys(
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[name='id_username']"))).send_keys(
             login_details.tradingview_username)
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[name='password']"))).send_keys(
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[name='id_password']"))).send_keys(
             login_details.tradingview_password)
 
         wait.until(EC.element_to_be_clickable((By.XPATH, "//button[.//span[contains(., 'Sign in')]]"))).click()
