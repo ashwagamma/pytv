@@ -89,13 +89,13 @@ elem_x = wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div
 # Sign In button top corner
 browser.find_element("xpath", ".//*[contains(text(), 'Sign in')]").click()
 # Sign in with password link
-browser.find_element(By.XPATH, "/html/body/div/div/div[2]/div[2]/form/div[3]/span/a").click()
+browser.find_element(By.XPATH, '/html/body/div/div/div[2]/div[2]/form/div[2]/div/a').click()
 #username
 wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div/div/div[2]/div[2]/form/div[1]/input"))).send_keys(login_details.substack_username)
 #password
 wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div/div/div[2]/div[2]/form/input[3]"))).send_keys(login_details.substack_password)
 #sign in button
-wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div/div/div[2]/div[2]/form/div[3]/button"))).click()
+wait.until(EC.element_to_be_clickable((By.XPATH, '/html/body/div/div/div[2]/div[2]/form/button'))).click()
 
 # first post
 wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div/div[1]/div[2]/div[1]/div/div[1]/div/div[1]/div[1]/a"))).click()
