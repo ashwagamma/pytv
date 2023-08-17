@@ -78,7 +78,7 @@ prefs = {"credentials_enable_service": False,
          "profile.password_manager_enabled": False}
 options.add_experimental_option("prefs", prefs)
 # browser = uc.Chrome(use_subprocess=True, options=options)
-browser = Driver(uc=True, incognito=True)
+browser = Driver(uc=True)
 browser.maximize_window()
 
 browser.get('https://tradecompanion.substack.com/')
