@@ -6,7 +6,7 @@ import login_details
 import re
 import json
 import undetected_chromedriver as uc
-
+from seleniumbase import Driver
 
 def process_list_range(list_range):
     new_range = []
@@ -77,7 +77,8 @@ options = uc.ChromeOptions()
 prefs = {"credentials_enable_service": False,
          "profile.password_manager_enabled": False}
 options.add_experimental_option("prefs", prefs)
-browser = uc.Chrome(use_subprocess=True, options=options)
+# browser = uc.Chrome(use_subprocess=True, options=options)
+browser = Driver(uc=True, incognito=True)
 browser.maximize_window()
 
 browser.get('https://tradecompanion.substack.com/')
