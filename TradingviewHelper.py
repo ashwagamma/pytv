@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.options import Options
 import login_details
 from time import sleep
 import undetected_chromedriver as uc
-
+from seleniumbase import Driver
 
 class TradingviewHelper(object):
 
@@ -25,7 +25,9 @@ class TradingviewHelper(object):
         prefs = {"credentials_enable_service": False,
                  "profile.password_manager_enabled": False}
         options.add_experimental_option("prefs", prefs)
-        browser = uc.Chrome(use_subprocess=True, options=options)
+        #browser = uc.Chrome(use_subprocess=True, options=options)
+        browser = Driver(uc=True)
+
         browser.maximize_window()
 
         #with open('readme.txt', 'w', encoding="utf-8") as f:
