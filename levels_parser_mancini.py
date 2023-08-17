@@ -125,11 +125,12 @@ res = re.findall(reg_str, txt)
 txt2 = browser.page_source
 reg_str = "<li><p>(.*?)</p></li>"
 res2 = re.findall(reg_str, txt)
-idx_sup = 0
+idx_sup = -1
 for idx in range(0,len(res2)):
     val = res2[idx]
     if str(val).lower().startswith('supports'):
-        idx_sup = idx
+        if idx_sup == -1:
+            idx_sup = idx
     print(idx, val)
     #print('res2 val=', val)
 
