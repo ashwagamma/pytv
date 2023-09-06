@@ -96,7 +96,8 @@ class TradingviewHelper(object):
         val2 = random.randint(13, 25)
         # click in the canvas so the line is drawn, needed for first line
         elem_canvas_main = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "chart-markup-table")))
-        elem_canvas = elem_canvas_main.find_element(By.XPATH, './/tr[3]/td[2]/div')
+        #elem_canvas = elem_canvas_main.find_element(By.XPATH, './/tr[3]/td[2]/div')
+        elem_canvas = elem_canvas_main.find_element(By.XPATH, './/div[1]/div[2]/div/canvas[2]')
         self.action_chains.move_to_element_with_offset(elem_canvas, val, val2).click().perform()
         #sleep(2)
         # Click on settings icon
@@ -140,7 +141,9 @@ class TradingviewHelper(object):
 
         # click in the canvas twice so the range is drawn
         elem_canvas_main = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "chart-markup-table")))
-        elem_canvas = elem_canvas_main.find_element(By.XPATH, './/tr[3]/td[2]/div')
+        #elem_canvas = elem_canvas_main.find_element(By.XPATH, './/tr[3]/td[2]/div')
+        elem_canvas = elem_canvas_main.find_element(By.XPATH, './/div[1]/div[2]/div/canvas[2]')
+        
 
         val = random.randint(1, 120)
         val2 = random.randint(130, 250)
