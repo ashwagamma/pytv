@@ -129,16 +129,22 @@ res = re.findall(reg_str, txt)
 txt2 = browser.page_source
 reg_str = "<li><p>(.*?)</p></li>"
 res2 = re.findall(reg_str, txt)
-for val in res2:
-    print(val)
-    #print('res2 val=', val)
+idx_sup = -1
+for idx in range(0, len(res2)):
+    val = res2[idx]
+    if str(val).lower().startswith('supports'):
+        if idx_sup == -1:
+            idx_sup = idx
+    print(idx, val)
 
-#"datePublished":"2022-09-14T14:01:13-07:00","dateModified":"2022-09-14T14:01:13-07:00","isAccessibleForFree"
+    # print('res2 val=', val)
+
+# "datePublished":"2022-09-14T14:01:13-07:00","dateModified":"2022-09-14T14:01:13-07:00","isAccessibleForFree"
 date_published = re.findall("\"datePublished\":\"(.*?)\",\"dateModified\"", txt)[0]
 print('date_published=', date_published)
-
-txt_support = res2[0]
-txt_resistance = res2[2]
+print('idx_sup=', idx_sup)
+txt_support = res2[idx_sup]
+txt_resistance = res2[idx_sup + 2]
 
 txt_support = txt_support.replace('4k', '4000')
 txt_support = txt_support.replace('3k', '3000')
