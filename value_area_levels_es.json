@@ -1,0 +1,33 @@
+{
+  "levels": [
+    5676,
+    5617,
+    5624,
+    5837,
+    5742,
+    5814,
+    6192,
+    5987,
+    6020,
+    5982,
+    5955
+  ],
+  "labels_levels": [
+    "pdVAH",
+    "pdVAL",
+    "pdPOC",
+    "pwVAH",
+    "pwVAL",
+    "pwPOC",
+    "febVAH",
+    "febVAL",
+    "febPOC",
+    "janVAL",
+    "decVAL"
+  ],
+  "ranges": [
+  ],
+  "labels_ranges": [
+  ],
+  "timestamp": "2023-05-10T15:24:11-08:00"
+}
