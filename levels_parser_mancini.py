@@ -95,6 +95,7 @@ if en_browser:
     browser.maximize_window()
 
     wait=WebDriverWait(browser, 10)
+    wait40=WebDriverWait(browser, 40)
 
     sleep(1)
     # No thanks
@@ -111,11 +112,13 @@ if en_browser:
     wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[name='password']"))).send_keys(login_details.tradytics_password)
     wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[type='submit']"))).click() #continue
 
+    wait40.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[aria-label='Post preview for My Trade Methodology - Fundamentals']")))  # continue
+    
     # first post
     wait.until(EC.element_to_be_clickable((By.XPATH, '/html/body/div/div[1]/div[2]/div[1]/div/div[2]/div[2]/div[1]/div/div[1]/div[2]/div[1]/div/div[1]/div/div[1]/div[1]/a'))).click()
 
     # wait till page has loaded basically
-    wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div/div[1]/div[2]/div/div[1]/div/div/article/div[1]/h1")))
+    wait40.until(EC.element_to_be_clickable((By.CLASS_NAME, "post-header")))
 
     with open('mancini.txt', 'w', encoding="utf-8") as f:
         f.write(browser.page_source)
@@ -187,5 +190,6 @@ with open('es.json', 'w') as f:
 
 if en_browser:
     browser.quit()
+
 
 
